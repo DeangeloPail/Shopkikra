@@ -13,10 +13,10 @@
     $repContrasea=(isset($_POST['repContrasea']))?$_POST['repContrasea']:"";
     $codReferido=(isset($_POST['codReferido']))?$_POST['codReferido']:"";
 
-    $sql="INSERT INTO `usuario` ( `perfil_usua`,`nom_usuario`, 
+    $sql="INSERT INTO `usuario` ( `perfil_usua`,`nom_usuario`, `foto_usuari`,
     `ape_usuario`, `doc_usuario`, `contrasena_`, `fecha_usuar`,
     `pais_usuari`, `telefon_usu`,`referido_usu`, `nivel_usuar`,`veri_usuari`, 
-    `correo_usua`, `term_correo`) VALUES ( '$usuario','$nombres', 
+    `correo_usua`, `term_correo`) VALUES ( '$usuario','$nombres', 'sin_usurio.jpg',
     '$apellidos', '$documento', '$repContrasea', '$fechaDeNacimiento', 
     '$codPais', '$telefono', '$codReferido', '6','2',  
     '$correo', '$terCorreo')";

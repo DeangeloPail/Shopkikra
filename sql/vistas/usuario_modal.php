@@ -1,7 +1,8 @@
 <?php
     include("../../db/database.php");
     ob_start();
-    
+    $id=(isset($_POST['id']))?$_POST['id']:"";
+
         $sql="SELECT `cod_usuario`,`perfil_usua`,`foto_usuari`,`nom_usuario`,
         `ape_usuario`,`doc_usuario`,`fecha_usuar`,pais.nombre_pais,
         `pais_usuari`,`telefon_usu`,`referido_usu`,niveles_usuario.nombre_nivl,
@@ -13,8 +14,8 @@
         LEFT JOIN niveles_usuario ON usuario.nivel_usuar=niveles_usuario.codigo_nivl
         LEFT JOIN estatus ON usuario.estatu_usua=estatus.cod_estatus
         LEFT JOIN terminal_correo on usuario.term_correo=terminal_correo.cod_termina
-        where `perfil_usua`= 'asd1';";
+        where `cod_usuario`= '$id';";
         $resultado=mysqli_query($conexion, $sql);
                  
-     json_encode('true');    
+     json_encode($resultado, JSON_UNESCAPED_UNICODE);    
 ?>

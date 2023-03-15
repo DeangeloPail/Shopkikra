@@ -15,7 +15,7 @@
         if($filas['nivel_usuar']==1) {
             $_SESSION['usuarioAdministrador']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/administrador/usuario_nover.php");
+            header("location: ../views/administrador/usuario_validar.php");
         }
         if($filas['nivel_usuar']==2){
             $_SESSION['usuarioBronce']="ok";
