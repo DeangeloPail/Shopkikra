@@ -1,3 +1,6 @@
+<?php
+     $referido=$idrecogido = base64_decode($_GET['codReferido']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,7 +99,7 @@
 							</div>
 
 							<div class="form-floating  mb-3">
-								<input type="text" class="form-control" id="codReferido" name="codReferido" placeholder="Codigo Referido" autocomplete="off">
+								<input type="text" class="form-control" id="codReferido" value="<?php echo $referido;?>" name="codReferido" placeholder="Codigo Referido" autocomplete="off">
 								<label for="codReferido">Codigo Referido</label>
 							</div>
 

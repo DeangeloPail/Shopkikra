@@ -11,15 +11,6 @@ $url="../../images/profiles/";
         <th scope="col">Usuario</th>
         <th scope="col">Foto De Perfil</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Documento</th>
-        <th scope="col">Fecha Nacimiento</th>
-        <th scope="col">Pais de Origen</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Referido por</th>
-        <th scope="col">Nivel</th>
-        <th scope="col">verificacion</th>
-        <th scope="col">Actividad</th>
-        <th scope="col">Correo</th>
         <th scope="col">accion</th>
       </tr>
     </thead>
@@ -29,17 +20,9 @@ $url="../../images/profiles/";
           <td><?php echo $usuario['perfil_usua']; ?></td>
           <td><img src="<?php echo $url.$usuario['foto_usuari']; ?>" width="100" height="100"></td>
           <td><?php echo $usuario['nom_usuario']; echo " "; echo $usuario['ape_usuario'];?> </td>
-          <td><?php echo $usuario['doc_usuario']; ?></td>
-          <td><?php echo $usuario['fecha_usuar']; ?></td>
-          <td><?php echo $usuario['nombre_pais']; ?></td>
-          <td><?php echo $usuario['pais_usuari']; echo " "; echo $usuario['telefon_usu'];?></td>
-          <td><?php echo $usuario['referido_usu'];?></td>
-          <td><?php echo $usuario['nombre_nivl'];?></td>
-          <td><?php echo $usuario['tip_verific'];?></td>
-          <td><?php echo $usuario['tip_estatus'];?></td>
-          <td><?php echo $usuario['correo_usua'];echo $usuario['tip_termina'];?></td>
+          
           <td>
-          <button type="button" class="btn btn-primary" 
+          <button type="button" class="btn btn-success" 
           data-bs-toggle="modal" data-bs-target="#exampleModal"
           data-bs-idu="<?php echo $usuario['cod_usuario']; ?>" 
           data-bs-per="<?php echo $usuario['perfil_usua']; ?>"
@@ -55,7 +38,7 @@ $url="../../images/profiles/";
           data-bs-act="<?php echo $usuario['tip_estatus'];?>"
           data-bs-cor="<?php echo $usuario['correo_usua'];echo $usuario['tip_termina'];?>"
           
-          >Open modal for @mdo</button>
+          ><i class="bi bi-person-badge"></i> Ver mas</button>
           </td>
           </tr>
         <?php }?>
@@ -73,7 +56,7 @@ $url="../../images/profiles/";
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="../../sql/modificar/verificarUsuario.php" method="POST">
             <input type="hidden" id="idUsuario" name="idUsuario">
             <div class="mb-3">
               <label for="usuario" class="col-form-label">usuario:</label>
@@ -123,12 +106,13 @@ $url="../../images/profiles/";
             <label for="correo" class="col-form-label">correo:</label>
               <p type="text" class="correo">
             </div>
-          </form>
+          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-success"><i class="bi bi-person-check"></i> Verificar Usuario</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
