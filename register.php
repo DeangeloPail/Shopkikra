@@ -104,7 +104,7 @@
 							</div>
 
 
-							<div class="container-login100-form-btn my-3">
+							<div class="container-login100-form-btn my-5">
 								<button type="submit" class="login100-form-btn mx-3">
 									Registrate
 								</button>
