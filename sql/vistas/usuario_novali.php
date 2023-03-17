@@ -14,4 +14,9 @@
     LEFT JOIN terminal_correo on usuario.term_correo=terminal_correo.cod_termina
     where `veri_usuari`= 2;";
     $result=mysqli_query($conexion, $sql);
+
+    $sqlContador="SELECT COUNT(*) FROM `usuario` where `veri_usuari`= 2;";
+    $resultContador=mysqli_query($conexion, $sqlContador);
+    $contUsuNoValidado=mysqli_fetch_assoc($resultContador);
+    $contadorNo=$contUsuNoValidado["COUNT(*)"];
 ?>
