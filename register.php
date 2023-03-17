@@ -5,7 +5,8 @@
 <html lang="en">
 <head>
 	<title>Shopkikra || Registro</title>
-	<meta charset="UTF-8">
+	<meta charset=
+	"UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 						<!--icono-->	
 	<link rel="icon" type="image/png" href="images/icons/blancoshk.png"/>
