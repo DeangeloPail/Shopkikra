@@ -109,7 +109,7 @@
 									Registrate
 								</button>
 			
-								<a class="login100-form-btn mx-3" type="button" href="./login.html">
+								<a class="login100-form-btn mx-3" type="button" href="./login.php">
 									Iniciar Sesión
 								</a>
 							</div>

@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['usuarioAdministrador'])){
+if(!isset($_SESSION['usuarioOro'])){
   session_start();
   session_destroy();
   header("location: ../../login.php");
 }else{
-  if($_SESSION['usuarioAdministrador']="ok"){
+  if($_SESSION['usuarioOro']="ok"){
       $nombreUsuario=$_SESSION["nombreUsuario"];
   }
 }

@@ -23,6 +23,8 @@
     $result=mysqli_query($conexion, $sql);
 
     if ($result){    
-        header("location: ../login.html");
-    }else{echo '<script type="text/javascript">alert("no pasa");</script>';}
+        header("location: ../login.php");
+    }else{
+        header("location: ../register.php?codReferido=");
+    }
 ?>

@@ -278,4 +278,5 @@ $url="../../images/profiles/";
       </div>
     </div>
 </div>
+<script src="../../js/modal.js"></script>
 <?php include_once("./template/footer.php"); ?>

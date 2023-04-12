@@ -20,31 +20,31 @@
         if($filas['nivel_usuar']==2){
             $_SESSION['usuarioBronce']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/controllers/usuari_1.php");
+            header("location: ../views/usuario1/perfil.php");
         }
         if($filas['nivel_usuar']==3){
             $_SESSION['usuarioPlata']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/controllers/usuari_2.php");
+            header("location: ../views/usuario2/perfil.php");
         }
         if($filas['nivel_usuar']==4){
             $_SESSION['usuarioOro']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/controllers/usuari_3.php");
+            header("location: ../views/usuario3/perfil.php");
         }
         if($filas['nivel_usuar']==5){
             $_SESSION['usuarioDiamante']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/controllers/usuari_4.php");
+            header("location: ../views/usuario4/perfil.php");
         }
         if($filas['nivel_usuar']==6){
             $_SESSION['usuarioFree']="ok";
             $_SESSION['nombreUsuario']=$usuario;
-            header("location: ../views/controllers/usuari_5.php");
+            header("location: ../views/usuario5/perfil.php");
         }
     }else{
         // no existe el usuario
-        header("location: ../login.html");
+        header("location: ../login.php");
     }
 
 mysqli_free_result($result);

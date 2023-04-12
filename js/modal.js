@@ -1,4 +1,5 @@
-const exampleModal = document.getElementById('exampleModal')
+const exampleModal = document.getElementById('exampleModal');
+
 exampleModal.addEventListener('show.bs.modal', event => {
   // Button that triggered the modal
   const button = event.relatedTarget
@@ -38,7 +39,7 @@ exampleModal.addEventListener('show.bs.modal', event => {
 
   modalTitle.textContent = `Usuario ${per}`
   idUsuario.value = idu
-  usuario.textContent = per
+  usuario.textContent= per
   foto.src = url + fot
   nombre.textContent= nom
   documento.textContent= doc
@@ -50,4 +51,5 @@ exampleModal.addEventListener('show.bs.modal', event => {
   verificaion.textContent= ver
   actividad.textContent= act
   correo.textContent= cor
+
 })

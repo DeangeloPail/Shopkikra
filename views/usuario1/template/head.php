@@ -1,11 +1,11 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION['usuarioAdministrador'])){
+if(!isset($_SESSION['usuarioBronce'])){
   session_start();
   session_destroy();
   header("location: ../../login.php");
 }else{
-  if($_SESSION['usuarioAdministrador']="ok"){
+  if($_SESSION['usuarioBronce']="ok"){
       $nombreUsuario=$_SESSION["nombreUsuario"];
   }
 }
@@ -70,7 +70,7 @@ if(!isset($_SESSION['usuarioAdministrador'])){
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link text-white active bg-gradient-info" href="usuario_validar.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
@@ -86,7 +86,7 @@ if(!isset($_SESSION['usuarioAdministrador'])){
             <span class="nav-link-text ms-1">Tables</span>
           </a>
         </li>
-        <!--<li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
@@ -121,14 +121,14 @@ if(!isset($_SESSION['usuarioAdministrador'])){
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
-        <li class="nav-item">
+--><li class="nav-item">
           <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
-        </li>
+        </li><!--
         <li class="nav-item">
           <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
