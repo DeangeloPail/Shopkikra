@@ -33,7 +33,7 @@
         </footer>
     </div>
   </main>
-
+<script src="../../js/controlador.js"></script>
   <!--   Core JS Files   -->
   <script src="../../vendor/assets/js/core/popper.min.js"></script>
 <!--Jquery-->

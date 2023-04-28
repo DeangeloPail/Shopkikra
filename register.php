@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-6 mx-auto my-5">
 					<div class="card" style="background:#9152f8 -webkit-linear-gradient(top, #7579ff, #b224ef)">
-						<form action="db/registro.php" class="mx-5" method="POST">
+						<form action="db/registro.php" class="mx-5" method="POST" id="formulario">
 
 							<span class="login100-form-title p-b-34 p-t-27">
 								Registro de Usuario
@@ -122,9 +122,12 @@
 
 
 	<div id="dropDownSelect1"></div>
+	<script src="./js/registrar.jstr"></script>
 	
 						<!--Jquery-->
 	<script src="vendor/jquery/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 						<!--animsition-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 						<!--bootstrap-->
