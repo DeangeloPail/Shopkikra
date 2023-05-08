@@ -1,6 +1,6 @@
 <?php 
 include_once("./template/head.php"); 
-include_once("../../sql/vistas/usuario_validados.php"); 
+include_once("../../sql/vistas/metodos_pago.php"); 
 ob_start(); 
 $url="../../images/profiles/";
 ?><div class="container-fluid py-4">
@@ -9,51 +9,48 @@ $url="../../images/profiles/";
     <div class="card my-4">
     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
         <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-        <h6 class="text-white text-capitalize ps-3">Usuarios Verificados</h6>
+        <h6 class="text-white text-capitalize ps-3">Metodos de pago</h6>
         </div>
     </div>
     <div class="card-body px-0 pb-2">
         <div class="table-responsive p-0">
+        <a type="button" class="btn btn-info mx-5" href="add_metodos_pago.php">Agregar metodo de pago</a>
         <table class="table align-items-center mb-0">
             <thead>
             <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Persona</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Usuario</th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha de Nacimiento</th>
-                <th class="text-secondary opacity-7"></th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Numero de Cuenta</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Banco</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Telefono</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Documento</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tipo de Cuenta</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Correo</th>
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Propietario</th>
             </tr>
             </thead>
             <tbody>
-            <?php while($usuario=mysqli_fetch_assoc($result)){?>
+            <?php while($metodos=mysqli_fetch_assoc($result)){?>
             <tr>
                 <td>
-                <div class="d-flex px-2 py-1">
-                    <div>
-                    <img src="<?php echo $url.$usuario['foto_usuari']; ?>" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                    </div>
-                    <div class="d-flex flex-column justify-content-center">
-                    <h6 class="mb-0 text-sm"><?php echo $usuario['nom_usuario']; echo " "; echo $usuario['ape_usuario'];?></h6>
-                    <p class="text-xs text-secondary mb-0"><?php echo $usuario['correo_usua'];echo $usuario['tip_termina'];?></p>
-                    </div>
-                </div>
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['numero_cuenta']; ?></p>
                 </td>
                 <td>
-                <p class="text-xs font-weight-bold mb-0"><?php echo $usuario['perfil_usua']; ?></p>
-                <p class="text-xs text-secondary mb-0"><?php echo $usuario['tip_estatus'];?></p>
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['banco'];?></p>
                 </td>
                 <td class="align-middle text-center text-sm">
-                <span class="badge badge-sm bg-gradient-success"><?php echo $usuario['tip_verific'];?></span>
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['num_telefono'];?></p>
                 </td>
                 <td class="align-middle text-center">
-                <span class="text-secondary text-xs font-weight-bold"><?php echo $usuario['fecha_usuar']; ?></span>
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['doc_identidad'];?></p>
                 </td>
-                <!--
-                <td class="align-middle">
-                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                </a>
-                </td>-->
+                <td class="align-middle text-center">
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['tip_cuenta'];?></p>
+                </td>
+                <td class="align-middle text-center">
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['correo_electro'];?></p>
+                </td>
+                <td class="align-middle text-center">
+                  <p class="text-xxs font-weight-bold mb-0"><?php echo $metodos['nom_propietario'];?></p>
+                </td>
             </tr>
             <?php }?>
 

@@ -12,10 +12,10 @@
     LEFT JOIN niveles_usuario ON usuario.nivel_usuar=niveles_usuario.codigo_nivl
     LEFT JOIN estatus ON usuario.estatu_usua=estatus.cod_estatus
     LEFT JOIN terminal_correo on usuario.term_correo=terminal_correo.cod_termina
-    where `veri_usuari`= 2;";
+    where `veri_usuari`= 3;";
     $result=mysqli_query($conexion, $sql);
 
-    $sqlContador="SELECT COUNT(*) FROM `usuario` where `veri_usuari`= 2;";
+    $sqlContador="SELECT COUNT(*) FROM `usuario` where `veri_usuari`= 3;";
     $resultContador=mysqli_query($conexion, $sqlContador);
     $contUsuNoValidado=mysqli_fetch_assoc($resultContador);
     $contadorNo=$contUsuNoValidado["COUNT(*)"];

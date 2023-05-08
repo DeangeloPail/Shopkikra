@@ -33,7 +33,12 @@
         </footer>
     </div>
   </main>
-<script src="../../js/controlador.js"></script>
+<script>
+  window.addEventListener('unload', function(event) {
+    // Enviar una solicitud al servidor para eliminar la cookie de sesión del usuario
+    fetch('../controllers/cerrar_sesion.php', { method: 'POST' });
+  });
+</script>
   <!--   Core JS Files   -->
   <script src="../../vendor/assets/js/core/popper.min.js"></script>
 <!--Jquery-->
@@ -327,6 +332,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../../vendor/assets/js/material-dashboard.min.js?v=3.0.4"></script>
+
 </body>
 
 </html>

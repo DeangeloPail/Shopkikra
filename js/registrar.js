@@ -1,31 +1,54 @@
 const formulario = document.getElementById('formulario');
 //constates de inputs para valdiar
-const CodigoCurso = document.getElementById('CodigoCurso');
-const NombreCurso = document.getElementById('NombreCurso');
-const Duracion = document.getElementById('Duracion');
-const AreaCurso = document.getElementById('AreaCurso');
-const TipoCurso = document.getElementById('TipoCurso');
-const CodigoUsuario = document.getElementById('CodigoUsuario');
-
+const nombres = document.getElementById('nombres');
+const apellidos = document.getElementById('apellidos');
+const documento = document.getElementById('documento');
+const fechaDeNacimiento = document.getElementById('fechaDeNacimiento');
+const codPais = document.getElementById('codPais');
+const telefono = document.getElementById('telefono');
+const correo = document.getElementById('correo');
+const terCorreo = document.getElementById('terCorreo');
+const usuario = document.getElementById('usuario');
+const contrasena = document.getElementById('contrasena');
+const repContrasea = document.getElementById('repContrasea');
+var fecha= new Date();
+    const anoActual=fecha.getFullYear()-64;
+    const anoMenor=fecha.getFullYear()-18;
+    const mesActual=fecha.getMonth()+1;
+    const diaActual=fecha.getDate();
+    function PadLeft(value, length) {
+      return (value.toString().length < length) ? PadLeft("0" + value, length) : 
+      value;
+    };
+const fechaMayor=(anoActual+'-'+PadLeft(mesActual,2)+'-'+PadLeft(diaActual,2));
+const fechaMenor=(anoMenor+'-'+PadLeft(mesActual,2)+'-'+PadLeft(diaActual,2));
 //alertas de errores de los campos
-const alertaCodigoCurso = document.getElementById('alertaCodigoCurso');
-const alertaNombreCurso = document.getElementById('alertaNombreCurso');
-const alertaDuracion = document.getElementById('alertaDuracion');
-const alertaAreaCurso = document.getElementById('alertaAreaCurso');
-const alertaTipoCurso = document.getElementById('alertaTipoCurso');
-const alertaCodigoUsuario = document.getElementById('alertaCodigoUsuario');
+const alertaNombre = document.getElementById('alertaNombre');
+const alertaApellido = document.getElementById('alertaApellido');
+const alertaDocumento = document.getElementById('alertaDocumento');
+const alertaFechNac = document.getElementById('alertaFechNac');
+const alertaTelefono = document.getElementById('alertaTelefono');
+const alertaCorreo = document.getElementById('alertaCorreo');
+const alertaUsuario = document.getElementById('alertaUsuario');
+const alertaContrasena = document.getElementById('alertaContrasena');
+const alertaRepcontrasena = document.getElementById('alertaRepcontrasena');
+const alertaReferido = document.getElementById('alertaReferido');
 
+console.log(telefono);
 //rangos de campos
-const regCodigoCurso = /^[0-9]{1,19}$/;
-const regNombreCurso = /^[a-zA-ZÀ-ÿ\s]{5,45}$/;
-const regDuracion = /^[0-9]{1,3}$/;
+const regNombre = /^[a-zA-ZÀ-ÿ\s]{3,40}$/;
+const regDocumento = /^[0-9]{6,11}$/;
+const regTelefono = /^[0-9]{5,14}$/;
+const regCorreo = /^[a-zA-Z0-9_.+-]{1,40}$/;
+const regUsuario =/^[a-zA-Z0-9_.+-]{1,20}$/;
+const regContrasena =/^.{4,12}$/;
 
 
 const pintarMensajeError = () => {
   Swal.fire({
     icon: 'error',
     title: 'Oops...',
-    text: 'Error falta elementos por llenar',
+    text: 'Algo salio mal verifica los datos',
   })
 };
 
@@ -48,79 +71,118 @@ function validarFormulario() {
   const errores = [];
 
 
-  // validar Curso
-  if (!regCodigoCurso.test(CodigoCurso.value) || !CodigoCurso.value.trim()) {
-    CodigoCurso.classList.add('is-invalid');
-    //validar si existe un otro CodigoCurso
-    
-    errores.push(alertaCodigoCurso.textContent = "Los nombres deben tener de 5 a 45 caracteres, ni contener caracteres especiales");
+  // validar nombres
+  if (!regNombre.test(nombres.value) || !nombres.value.trim()) {
+    nombres.classList.add('is-invalid');    
+    errores.push(alertaNombre.textContent = "Los escriba un nombre");
 
   } else {
-    CodigoCurso.classList.remove('is-invalid');
-    CodigoCurso.classList.add('is-valid');
-    alertaCodigoCurso.classList.add('d-none');
+    nombres.classList.remove('is-invalid');
+    nombres.classList.add('is-valid');
   }
-  // validar NombreCurso
-  if (!regNombreCurso.test(NombreCurso.value) || !NombreCurso.value.trim()) {
-    NombreCurso.classList.add('is-invalid');
-    //validar si existe un otro NombreCurso
-    
-    errores.push(alertaNombreCurso.textContent = "Los nombres deben tener de 5 a 45 caracteres, ni contener caracteres especiales");
+
+  // validar apellidos
+  if (!regNombre.test(apellidos.value) || !apellidos.value.trim()) {
+    apellidos.classList.add('is-invalid');    
+    errores.push(alertaApellido.textContent = "Los escriba un apellido");
 
   } else {
-    NombreCurso.classList.remove('is-invalid');
-    NombreCurso.classList.add('is-valid');
-    alertaNombreCurso.classList.add('d-none');
+    apellidos.classList.remove('is-invalid');
+    apellidos.classList.add('is-valid');
   }
-  // validar Duracion
-  if (!regDuracion.test(Duracion.value) || !Duracion.value.trim()) {
-    Duracion.classList.add('is-invalid');
-    //validar si existe un otro Duracion
-    
-    errores.push(alertaDuracion.textContent = "Los apellidos deben tener de 5 a 45 caracteres, ni contener caracteres especiales");
+
+  // validar documento
+  if (!regDocumento.test(documento.value) || !documento.value.trim()) {
+    documento.classList.add('is-invalid');    
+    errores.push(alertaDocumento.textContent = "escriba un documento valido");
 
   } else {
-    Duracion.classList.remove('is-invalid');
-    Duracion.classList.add('is-valid');
-    alertaDuracion.classList.add('d-none');
+    documento.classList.remove('is-invalid');
+    documento.classList.add('is-valid');
   }
 
-  // validar Select tipo de AreaCurso
-    var optForm = document.forms["formulario"]["AreaCurso"].selectedIndex;
+  // validar Fecha
+  if ((fechaDeNacimiento.value>fechaMenor || fechaDeNacimiento.value<fechaMayor)) {
+    fechaDeNacimiento.classList.add('is-invalid');
+    errores.push(alertaFechNac.textContent = "Pon tu fecha de nacimiento solo +18 años");
+
+  } else {
+    fechaDeNacimiento.classList.remove('is-invalid');
+    fechaDeNacimiento.classList.add('is-valid');
+  }
+  
+  // validar Select codigo de telefono
+    var optForm = document.forms["formulario"]["codPais"].selectedIndex;
     if( optForm == null || optForm == 0 ) {
-    AreaCurso.classList.add('is-invalid');
+    codPais.classList.add('is-invalid');
 
-    errores.push(alertaAreaCurso.textContent = "Seleccione el usuario correspondiete");
+    errores.push(alertaTelefono.textContent = "Selecciona un codigo de telefono");
   } else {
-    AreaCurso.classList.remove('is-invalid');
-    AreaCurso.classList.add('is-valid');
-    alertaAreaCurso.classList.add('d-none');
-  }
-    // validar Select tipo de TipoCurso
-    var optForm = document.forms["formulario"]["TipoCurso"].selectedIndex;
-    if( optForm == null || optForm == 0 ) {
-    TipoCurso.classList.add('is-invalid');
-
-    errores.push(alertaTipoCurso.textContent = "Seleccione el usuario correspondiete");
-  } else {
-    TipoCurso.classList.remove('is-invalid');
-    TipoCurso.classList.add('is-valid');
-    alertaTipoCurso.classList.add('d-none');
+    codPais.classList.remove('is-invalid');
+    codPais.classList.add('is-valid');
   }
 
-    // validar Select tipo de CodigoUsuario
-    var optForm = document.forms["formulario"]["CodigoUsuario"].selectedIndex;
-    if( optForm == null || optForm == 0 ) {
-    CodigoUsuario.classList.add('is-invalid');
-
-    errores.push(alertaCodigoUsuario.textContent = "Seleccione el usuario correspondiete");
+  // validar telefono
+  if (!regTelefono.test(telefono.value) || !telefono.value.trim()) {
+    telefono.classList.add('is-invalid');    
+    errores.push(alertaTelefono.textContent = "escriba un numero de telefono valido");
   } else {
-    CodigoUsuario.classList.remove('is-invalid');
-    CodigoUsuario.classList.add('is-valid');
-    alertaCodigoUsuario.classList.add('d-none');
+    telefono.classList.remove('is-invalid');
+    telefono.classList.add('is-valid');
   }
 
+  // validar Select correo
+  var optForm = document.forms["formulario"]["terCorreo"].selectedIndex;
+  if( optForm == null || optForm == 0 ) {
+  terCorreo.classList.add('is-invalid');
 
+  errores.push(alertaCorreo.textContent = "Selecciona un dominio");
+} else {
+  terCorreo.classList.remove('is-invalid');
+  terCorreo.classList.add('is-valid');
+}
+
+  // validar correo
+if (!regCorreo.test(correo.value) || !correo.value.trim()) {
+  correo.classList.add('is-invalid');    
+  errores.push(alertaCorreo.textContent = "escriba un correo sin contar el @.....");
+} else {
+  correo.classList.remove('is-invalid');
+  correo.classList.add('is-valid');
+}
+
+// validar usuario
+if (!regUsuario.test(usuario.value) || !usuario.value.trim()) {
+  usuario.classList.add('is-invalid');    
+  errores.push(alertaUsuario.textContent = "escriba un usuario valido");
+} else {
+  usuario.classList.remove('is-invalid');
+  usuario.classList.add('is-valid');
+}
+
+// validar contraseña
+if (!regContrasena.test(contrasena.value) || !contrasena.value.trim()) {
+  contrasena.classList.add('is-invalid');    
+  errores.push(alertaContrasena.textContent = "escriba un contraseña solo se permite de 4 a 12 caracteres");
+} else {
+  contrasena.classList.remove('is-invalid');
+  contrasena.classList.add('is-valid');
+}
+
+// validar repita contraseña
+if (contrasena.value!== repContrasea.value || !repContrasea.value.trim()) {
+  repContrasea.classList.add('is-invalid');    
+  errores.push(alertaRepcontrasena.textContent = "La contraseña no es igual por favor verifique");
+} else {
+  repContrasea.classList.remove('is-invalid');
+  repContrasea.classList.add('is-valid');
+}
+
+
+
+
+  
+  
 //Reviso el formulario si tiene errores o tine campos vacios
   if (errores.length !== 0) {
     pintarMensajeError(errores);

@@ -4,6 +4,7 @@
 $url=(isset($_POST['url']))?$_POST['url']:"";
 $idUsuario=(isset($_POST['idUsuario']))?$_POST['idUsuario']:"";
 $nombre=(isset($_POST['nombre']))?$_POST['nombre']:"";
+$apellido=(isset($_POST['apellido']))?$_POST['apellido']:"";
 $documento=(isset($_POST['documento']))?$_POST['documento']:"";
 $fecha=(isset($_POST['fecha']))?$_POST['fecha']:"";
 
@@ -18,7 +19,7 @@ $fecha=(isset($_POST['fecha']))?$_POST['fecha']:"";
             $_SESSION['mensaje'] = 'solo se permite archivos jpg o png';
             header('Location: '.$url.'');
           }else{
-            $sql= "UPDATE `usuario` SET `nom_usuario` = '$nombre', 
+            $sql= "UPDATE `usuario` SET `nom_usuario` = '$nombre', `ape_usuario` = '$apellido', 
             `doc_usuario` = '$documento',`fecha_usuar` = '$fecha',
             `foto_usuari` = '$imagen' 
             WHERE `usuario`.`cod_usuario` = '$idUsuario'";
@@ -33,7 +34,7 @@ $fecha=(isset($_POST['fecha']))?$_POST['fecha']:"";
           }
         
         }else{
-            $sql= "UPDATE `usuario` SET `nom_usuario` = '$nombre', 
+            $sql= "UPDATE `usuario` SET `nom_usuario` = '$nombre', `ape_usuario` = '$apellido', 
             `doc_usuario` = '$documento',`fecha_usuar` = '$fecha' 
             WHERE `usuario`.`cod_usuario` = '$idUsuario'";
             $resultdo = mysqli_query($conexion,$sql);

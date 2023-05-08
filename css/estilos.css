@@ -1,0 +1,43 @@
+/* estilos propios */
+.label-documento {
+    display: inline-block;
+    padding: 10px 20px; /* ajusta según tus necesidades */
+    border-radius: 20px;
+    border: 2px dashed #970831; /* cambia el color del borde aquí */
+    position: relative;
+    width: 100%; /* para que el label ocupe todo el ancho del contenedor */
+    text-align: center; /* para centrar el texto dentro del label */
+    color: #970831; /* cambia el color del texto aquí */
+    font-size: 20px; /* cambia el tamaño del texto aquí */
+    box-sizing: border-box; /* para incluir el padding en el ancho del label */
+  }
+  
+  @media (max-width: 768px) {
+    .label-documento {
+      width: 100%;
+    }
+  }
+  .input-invisible {
+    display: none;
+  }
+  .centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ajusta según tus necesidades */
+  }
+  .foto-perfil {
+    display: inline-block;
+    width: 20vw; /* ajusta según tus necesidades */
+    max-width: 300px; /* ajusta según tus necesidades */
+    height: 20vw; /* ajusta según tus necesidades */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20vw; /* centra verticalmente el contenido */
+    font-size: 5vw; /* ajusta según tus necesidades */
+  }
+  .foto-perfil img, .foto-perfil span {
+    max-width: 100%;
+    max-height: 100%;
+  }
+    

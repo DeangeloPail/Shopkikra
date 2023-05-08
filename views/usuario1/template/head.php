@@ -7,6 +7,7 @@ if(!isset($_SESSION['usuarioBronce'])){
 }else{
   if($_SESSION['usuarioBronce']="ok"){
       $nombreUsuario=$_SESSION["nombreUsuario"];
+      $IDUsuario=$_SESSION["IDUsuario"];
   }
 }
 ?>
@@ -45,7 +46,8 @@ if(!isset($_SESSION['usuarioBronce'])){
 						<!--css-->
 	<link rel="stylesheet" type="text/css" href="../../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
-<!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="../../css/estilos.css">
+  <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="../../vendor/assets/css/nucleo-icons.css" rel="stylesheet" />
@@ -122,21 +124,21 @@ if(!isset($_SESSION['usuarioBronce'])){
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
 --><li class="nav-item">
-          <a class="nav-link text-white " href="#">
+          <a class="nav-link text-white " href="./perfil">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
-        </li><!--
-        <li class="nav-item">
-          <a class="nav-link text-white " href="#">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="./planes_suscripcion.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="bi bi-person-fill-up"></i>
+            </div>
+            <span class="nav-link-text ms-1">Subir de nivel</span>
+          </a>
+        </li><!--
         <li class="nav-item">
           <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

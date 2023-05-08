@@ -1,4 +1,4 @@
-const exampleModal = document.getElementById('exampleModal');
+var exampleModal = document.getElementById('exampleModal');
 
 exampleModal.addEventListener('show.bs.modal', event => {
   // Button that triggered the modal

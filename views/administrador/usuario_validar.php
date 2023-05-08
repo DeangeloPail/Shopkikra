@@ -143,10 +143,10 @@ $url="../../images/profiles/";
       <div class="card-header pb-0">
         <div class="row">
           <div class="col-lg-6 col-7">
-            <h6>Usuarios Sin Verificar</h6>
+            <h6>Usuarios espera de verificaión</h6>
             <p class="text-sm mb-0">
               <i class="bi bi-x-lg" aria-hidden="true"></i>
-              <span class="font-weight-bold ms-1"><?php echo ("$contadorNo");?> Usuarios</span> sin Verificar
+              <span class="font-weight-bold ms-1"><?php echo ("$contadorNo");?> Usuarios</span> espera de verificaión
             </p>
           </div>
         </div>
@@ -272,7 +272,8 @@ $url="../../images/profiles/";
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-success"><i class="bi bi-person-check"></i> Verificar Usuario</button>
+          <button type="submit" class="btn btn-success" name="Accion" value="Verificar"><i class="bi bi-person-check"></i> Verificar Usuario</button>
+          <button type="submit" class="btn btn-danger" name="Accion" value="Negar"><i class="bi bi-person-fill-slash"></i> Negar Usuario</button>
         </div>
         </form>
       </div>

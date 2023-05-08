@@ -27,7 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 						<!--daterangepicker-->	
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-						<!--css-->
+						<!--css -->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-6 mx-auto my-5">
 					<div class="card" style="background:#9152f8 -webkit-linear-gradient(top, #7579ff, #b224ef)">
-						<form action="db/registro.php" class="mx-5" method="POST" id="formulario">
+						<form  class="mx-5" method="POST" id="formulario" action="./db/registro.php">
 
 							<span class="login100-form-title p-b-34 p-t-27">
 								Registro de Usuario
@@ -46,20 +46,24 @@
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres"autocomplete="off">
 								<label for="nombres">Nombres</label>
+								<div class="invalid-feedback"id="alertaNombre"></div>
 							</div>
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos"autocomplete="off">
 								<label for="apellidos">Apellidos</label>
+								<div class="invalid-feedback"id="alertaApellido"></div>
 							</div>
 
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="documento" name="documento" placeholder="Documento"autocomplete="off">
 								<label for="documento">Documento</label>
+								<div class="invalid-feedback"id="alertaDocumento"></div>
 							</div>
 
 							<div class="form-floating mb-3">
 								<input type="date" class="form-control" id="fechaDeNacimiento" name="fechaDeNacimiento" placeholder="Fecha De Nacimiento"autocomplete="off">
-								<label for="fechaDeNacimiento">Fecha De Nacimiento</label>
+								<label for="fechaDeNacimiento">Fecha De Nacimiento</label>            
+								<div class="invalid-feedback"id="alertaFechNac"></div>
 							</div>
 
 							<div class="input-group mb-3">
@@ -70,6 +74,7 @@
 								  <option value="+54">+54</option>
 								</select>
 								<input type="text" class="form-control input-group-text px-5" id="telefono" name="telefono" placeholder="Telefono"autocomplete="off">
+								<div class="invalid-feedback"id="alertaTelefono"></div>
 							</div>
 
 							<div class="input-group mb-3">
@@ -79,6 +84,7 @@
 								<option value="1">@gmail.com</option>
 								<option value="2">@hotmail.com</option>
 								</select>
+								<div class="invalid-feedback"id="alertaCorreo"></div>
 							</div>
 
 							<hr class="border border-primary border-3 opacity-75">
@@ -86,23 +92,26 @@
 							<div class="form-floating mb-3">
 								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" autocomplete="off">
 								<label for="usuario">Usuario</label>
+								<div class="invalid-feedback"id="alertaUsuario"></div>
 							</div>
 
 							<div class="form-floating  mb-3">
 								<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" autocomplete="off">
 								<label for="contrasena">Contraseña</label>
+								<div class="invalid-feedback"id="alertaContrasena"></div>
 							</div>
 
 							<div class="form-floating  mb-3">
 								<input type="password" class="form-control" id="repContrasea" name="repContrasea" placeholder="Repita Contraseña" autocomplete="off">
 								<label for="repContrasea">Repita Contraseña</label>
+								<div class="invalid-feedback"id="alertaRepcontrasena"></div>
 							</div>
 
 							<div class="form-floating  mb-3">
 								<input type="text" class="form-control" id="codReferido" value="<?php echo $referido;?>" name="codReferido" placeholder="Codigo Referido" autocomplete="off">
 								<label for="codReferido">Codigo Referido</label>
+								<div class="invalid-feedback"id="alertaReferido"></div>
 							</div>
-
 
 							<div class="container-login100-form-btn my-5">
 								<button type="submit" class="login100-form-btn mx-3">
@@ -122,10 +131,11 @@
 
 
 	<div id="dropDownSelect1"></div>
-	<script src="./js/registrar.jstr"></script>
 	
 						<!--Jquery-->
 	<script src="vendor/jquery/jquery.min.js"></script>
+						<!--sweetalert2-->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 						<!--animsition-->
@@ -141,7 +151,7 @@
 						<!--countdowntime-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 						<!--js-->
-	<script src=""></script>
+	<script src="./js/registrar.js"></script>
 
 </body>
 </html>

@@ -9,32 +9,38 @@
 	$result=mysqli_query($conexion,$sql);
 
 	$filas=mysqli_fetch_array($result);
+    $codUsuario=$filas['cod_usuario'];
 
     if($filas == true){
         // validar rol
         if($filas['nivel_usuar']==1) {
             $_SESSION['usuarioAdministrador']="ok";
             $_SESSION['nombreUsuario']=$usuario;
+            $_SESSION['IDUsuario']=$codUsuario;
             header("location: ../views/administrador/usuario_validar.php");
         }
         if($filas['nivel_usuar']==2){
             $_SESSION['usuarioBronce']="ok";
             $_SESSION['nombreUsuario']=$usuario;
+            $_SESSION['IDUsuario']=$codUsuario;
             header("location: ../views/usuario1/perfil.php");
         }
         if($filas['nivel_usuar']==3){
             $_SESSION['usuarioPlata']="ok";
             $_SESSION['nombreUsuario']=$usuario;
+            $_SESSION['IDUsuario']=$codUsuario;
             header("location: ../views/usuario2/perfil.php");
         }
         if($filas['nivel_usuar']==4){
             $_SESSION['usuarioOro']="ok";
             $_SESSION['nombreUsuario']=$usuario;
+            $_SESSION['IDUsuario']=$codUsuario;
             header("location: ../views/usuario3/perfil.php");
         }
         if($filas['nivel_usuar']==5){
             $_SESSION['usuarioDiamante']="ok";
             $_SESSION['nombreUsuario']=$usuario;
+            $_SESSION['IDUsuario']=$codUsuario;
             header("location: ../views/usuario4/perfil.php");
         }
         if($filas['nivel_usuar']==6){

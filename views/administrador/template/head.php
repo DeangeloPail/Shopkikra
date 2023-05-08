@@ -21,9 +21,9 @@ if(!isset($_SESSION['usuarioAdministrador'])){
 	<link rel="icon" type="image/png" href="../../images/icons/blancoshk.png"/>
 						<!--bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>				
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">	
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">	
 						<!--font-->
 	<link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 						<!--iconic-->
@@ -45,6 +45,7 @@ if(!isset($_SESSION['usuarioAdministrador'])){
 						<!--css-->
 	<link rel="stylesheet" type="text/css" href="../../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../../css/estilos.css">
 <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -56,6 +57,7 @@ if(!isset($_SESSION['usuarioAdministrador'])){
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="../../vendor/assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -71,7 +73,7 @@ if(!isset($_SESSION['usuarioAdministrador'])){
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-info" href="usuario_validar.php">
+          <a class="nav-link text-white" href="usuario_validar.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -81,19 +83,20 @@ if(!isset($_SESSION['usuarioAdministrador'])){
         <li class="nav-item">
           <a class="nav-link text-white " href="usuarios_verificados.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="bi bi-person-check"></i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Usuarios verificados</span>
           </a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link text-white " href="#">
+        <li class="nav-item">
+          <a class="nav-link text-white " href="metodos_pago.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
+              <i class="bi bi-credit-card-2-front"></i>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Metodos de pago</span>
           </a>
         </li>
+        <!--
         <li class="nav-item">
           <a class="nav-link text-white " href="#">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
